@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Renew Password</title>
+</head>
+<body>
+<h1> Welcome {{username}} </h1>
+<h2 style="color:red;">{{ error }}</h2>
+    <form method="post", action="/renew-password">
+         <label for="system"><h3>Choose the system :</h3></label> <br>
+        <select name="system" id="legacy">
+          <option value="HR">HR</option>
+          <option value="Finance">Finance</option>
+          <option value="IT">IT</option>
+        </select><br><br><br>
+
+        <label>Username</label><br>
+        <input type="text" name="username"><br>
+        <label>Password</label><br>
+        <input type="password" name="password"><br>
+        <label> Confirm Password</label><br>
+        <input type="confirm_password" name="confirm_password"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+<h3 style="color:green;">The Password should match the following criteria:</h3>
+<p style="color:green;"> The password MUST contain at least {{password_min_chars}} characters (12+ recommended). <br>
+MUST contain at least one uppercase letter.<br>
+MUST contain at least one lowercase letter.<br>
+MUST contain at least one number.<br>
+MUST contain at least one special character {{required_chars}}.<br>
+</p>
+</body>
+</html>
